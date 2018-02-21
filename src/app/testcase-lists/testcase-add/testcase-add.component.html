@@ -1,0 +1,27 @@
+<div class="container mt-lg-5">
+  <a routerLink="/testcases" >Go back</a>
+  <div *ngIf="status"><h5 style="color: forestgreen">Added Successfully</h5></div>
+  <div class="row">
+    <div class="col-lg-12">
+      <form>
+        <div class="form-group row">
+          <label for="title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" (keypress)="changeStatus()" name="title" class="form-control" [(ngModel)] ="testCase.title" id="title" placeholder="Title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="script" class="col-sm-2 col-form-label">Script</label>
+          <div class="col-sm-10">
+            <textarea name="script" (keypress)="changeStatus()" class="form-control" [(ngModel)] ="testCase.script" id="script" placeholder="Script"></textarea>
+          </div>
+        </div>
+        <div class="form-group row" style="text-align: center">
+          <div class="col-sm-10">
+            <button type="submit" (click)="addTestCase(testCase)" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
